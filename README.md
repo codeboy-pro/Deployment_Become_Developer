@@ -3,7 +3,7 @@
 A real-time collaborative code editor built with React, Monaco Editor, Yjs, Socket.IO, and Express.
 
 This project allows multiple users to join the same editing session, type in a shared document, and see who is currently active in the workspace.
-
+![alt text](image.png)
 ## Features
 
 - Real-time collaborative editing
