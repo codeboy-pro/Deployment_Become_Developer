@@ -1,4 +1,4 @@
-Absolutely. Based on the Docker commands you practiced in the terminal, here is the **practical “when do I use this command?” cheat sheet**, plus the important concepts you should know for backend development. Your practice covered the core Docker lifecycle: pull → run → inspect → stop → remove, plus images, ports, environment variables, logs, and `exec`. 
+Absolutely. Based on the Docker commands you practiced in the terminal, here is the **practical “when do I use this command?” cheat sheet**, plus the important concepts you should know for backend development. Your practice covered the core Docker lifecycle: pull → run → inspect → stop → remove, plus images, ports, environment variables, logs, and `exec`.
 
 # 🐳 Docker Practical Summary — When to Use Which Command
 
@@ -12,7 +12,7 @@ Absolutely. Based on the Docker commands you practiced in the terminal, here is 
 docker --version
 ```
 
-You successfully verified Docker 29.7.2. 
+You successfully verified Docker 29.7.2.
 
 ### `docker info`
 
@@ -47,7 +47,7 @@ Think:
 docker images
 ```
 
-You used this to see `ubuntu`, `mysql`, `backend`, `server`, etc. 
+You used this to see `ubuntu`, `mysql`, `backend`, `server`, etc.
 
 ### `docker pull`
 
@@ -68,11 +68,11 @@ mysql:8.0
 
 Here:
 
-* `mysql` → image
-* `8.0` → tag/version
-* If you don't specify a tag, Docker generally uses `latest`.
+- `mysql` → image
+- `8.0` → tag/version
+- If you don't specify a tag, Docker generally uses `latest`.
 
-You practiced both `mysql` and `mysql:8.0`. 
+You practiced both `mysql` and `mysql:8.0`.
 
 ---
 
@@ -100,14 +100,14 @@ You used:
 docker run -it ubuntu
 ```
 
-and entered the Ubuntu container. 
+and entered the Ubuntu container.
 
 ### `-it`
 
 Means:
 
-* `-i` → interactive
-* `-t` → terminal/TTY
+- `-i` → interactive
+- `-t` → terminal/TTY
 
 So:
 
@@ -142,8 +142,6 @@ You used:
 ```bash
 docker run -d -e MYSQL_ROOT_PASSWORD=secret mysql
 ```
-
-
 
 ---
 
@@ -206,8 +204,6 @@ Exited (137)
 Exited (255)
 ```
 
-
-
 ### Remember
 
 ```text
@@ -239,7 +235,7 @@ You used:
 docker start 3807513ebbdd
 ```
 
-and the Ubuntu container became `Up`. 
+and the Ubuntu container became `Up`.
 
 ### Important difference
 
@@ -275,8 +271,6 @@ You used:
 docker stop mysql-older
 docker stop mysql-latest
 ```
-
-
 
 ---
 
@@ -317,7 +311,7 @@ docker stop mysql-db
 docker rm mysql-db
 ```
 
-You practiced exactly this workflow. 
+You practiced exactly this workflow.
 
 ### Important ⚠️
 
@@ -343,7 +337,7 @@ You experienced this:
 conflict: unable to delete mysql:latest
 ```
 
-because a container was still using it. 
+because a container was still using it.
 
 So remember:
 
@@ -383,7 +377,7 @@ localhost:8080
 container:3306
 ```
 
-You successfully created this mapping. 
+You successfully created this mapping.
 
 ### Example: Node.js
 
@@ -427,8 +421,6 @@ The second container failed because:
 8080 is already allocated
 ```
 
-
-
 So:
 
 > **One host port cannot normally be bound by two containers at the same time.**
@@ -453,7 +445,7 @@ Example:
 -e DATABASE_URL=...
 ```
 
-You used `MYSQL_ROOT_PASSWORD` when starting MySQL. 
+You used `MYSQL_ROOT_PASSWORD` when starting MySQL.
 
 Inside the container:
 
@@ -463,7 +455,7 @@ env
 
 can show environment variables.
 
-You verified the MySQL password variable using `env`. 
+You verified the MySQL password variable using `env`.
 
 ---
 
@@ -473,17 +465,17 @@ You verified the MySQL password variable using `env`.
 
 **When:** Your application/container is running but you want to know:
 
-* What is happening?
-* Did the application start?
-* Is there an error?
-* Why did it crash?
-* Is MySQL ready?
+- What is happening?
+- Did the application start?
+- Is there an error?
+- Why did it crash?
+- Is MySQL ready?
 
 ```bash
 docker logs mysql-latest
 ```
 
-You used this to inspect MySQL startup logs. 
+You used this to inspect MySQL startup logs.
 
 ### Follow logs live
 
@@ -507,7 +499,7 @@ docker exec -it mysql-latest /bin/bash
 
 **When:** You want to execute commands **inside an already running container**.
 
-You used exactly this. 
+You used exactly this.
 
 For example:
 
@@ -529,13 +521,13 @@ docker inspect mysql-latest
 
 **When:** You need detailed technical information:
 
-* IP address
-* Network
-* Mounts
-* Environment variables
-* Ports
-* Image
-* Configuration
+- IP address
+- Network
+- Mounts
+- Environment variables
+- Ports
+- Image
+- Configuration
 
 Very useful for debugging.
 
@@ -551,10 +543,10 @@ docker stats
 
 Shows:
 
-* CPU usage
-* Memory usage
-* Network
-* Block I/O
+- CPU usage
+- Memory usage
+- Network
+- Block I/O
 
 Useful when a container is consuming too many resources.
 
@@ -852,3 +844,224 @@ And the **5 concepts you absolutely should be able to explain in an interview** 
 5. **Docker networking + Docker Compose**
 
 Those five are the real meat of Docker for a backend developer.
+
+1830 docker --version
+1831 docker
+1832 clear
+1833 docker pull hello-world
+1834 docker images
+1835 docker run hello-world
+1836 docker pull ubuntu
+1837 docker run -it ubuntu
+1838 docker ps -a
+1839 docker ps
+1840 docker start 3807513ebbdd
+1841 docker ps
+1842 docker stop gallant_gagarin
+1843 docker ps
+1844 docker images
+1845 docker rmi 5dd0d3e6e255
+1846 docker ps
+1847 docker ps -a
+1848 docker rm 61ab5b110885
+1849 docker images
+1850 docker rmi 5dd0d3e6e255
+1851 docker images
+1852 docker ps -1
+1853 docker ps -a
+1854 docker rm 3807513ebbdd
+1855 docker images
+1856 docker rmi 2260313b31c8
+1857 docker images
+1858 docker ps -a
+1859 docker pull mysql
+1860 docker pull mysql:8.0
+1861 docker images
+1862 docker run -d -e MYSQL_ROOT_PASSWORD=secret mysql
+1863 docker ps
+1864 docker run -d -e MYSQL_ROOT_PASSWORD=secret --name mysql-older mysql:8.0
+1865 docker images
+1866 docker ps
+1867 docker stop a091cafcdab5
+1868 docker ps
+1869 docker images
+1870 docker rmi mysql
+1871 docker rm mysql
+1872 docker rm a091cafcdab5
+1873 docker images
+1874 docker rmi mysql
+1875 docker images
+1876 docker ps -a
+1877 docker ps
+1878 docker pull mysql
+1879 docker run -d -e MYSQL_ROOT_PASSWORD=secret --name mysql-latest mysql
+1880 docker ps
+1881 docker stop mysql-older
+1882 docker stop mysql-latest
+1883 docker rm mysql-older
+1884 docker rm mysql-latest
+1885 docker ps -a
+1886 docker images
+1887 docker run -d -e MYSQL_ROOT_PASSWORD=secret --name mysql-latest -p8080:3306 mysql
+1888 docker ps
+1889 docker run -d -e MYSQL_ROOT_PASSWORD=secret --name mysql-older -p8080:3306 mysql:8.0
+1890 docker run -d -e MYSQL_ROOT_PASSWORD=secret --name mysql-older -p5000:3306 mysql:8.0
+1891 docker ps
+1892 docker stop mysql-older
+1893 docker rm mysql-older
+1894 docker run -d -e MYSQL_ROOT_PASSWORD=secret --name mysql-older -p3000:3306 mysql:8.0
+1895 docker ps
+1896 docker logs mysql-latest
+1897 docker ps
+1898 docker exec -it mysql-latest /bin/bash
+1899 clear
+1900 cd ..
+1901 git status
+1902 git add .
+1903 git commit -m "add testapp"
+1904 git push
+1905 cd /media/guddu/NewVolume/Deployment_Become_Developer
+1906 git rm --cached Docker/docker-testapp
+1907 rm -rf Docker/docker-testapp/.git
+1908 git add Docker/docker-testapp
+1909 git commit -m "Add Docker test app"
+1910 git push origin main
+1911 git clone https://github.com/shradha-khapra/docker-testapp.git
+1912 git status
+1913 node server.js
+1914 docker ps
+1915 docker network ls
+1916 docker network mongodb-network
+1917 docker network create mongodb-network
+1918 docker network ls
+1919 docker run -d -p27017:27017 --name mongo --network mongo-network -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=qwerty mongo
+1920 docker ps
+1921 docker stop 96fd84347f5f
+1922 docker stop a30a3b231a20
+1923 sudo lsof -i :27017
+1924 sudo systemctl stop mongod
+1925 sudo lsof -i :27017
+1926 docker run -d -p27017:27017 --name mongo --network mongo-network -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=qwerty mongo
+1927 docker ps -a
+1928 docker rm e405776487c4
+1929 docker images
+1930 docker rmi mongo
+1931 docker run -d -p27017:27017 --name mongo --network mongo-network -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=qwerty mongo
+1932 docker run mongo
+1933 docker start mongo
+1934 clear
+1935 docker ps
+1936 docker network ls
+1937 docker rm mongo
+1938 docker run -d -p 27017:27017 --name mongo --network mongodb-network -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=qwerty mongo
+1939 docker ps
+1940 docker run -d -p8081:8081 --name mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=qwerty -e ME_CONFIG_MONGODB_URI="mongodb://admin:qwerty@mongo:27017" mongo-express
+1941 docker ps
+1942 docker stop 431b5b97edb3
+1943 docker start 431b5b97edb3
+1944 docker ps
+1945 docker stop 431b5b97edb3
+1946 docker ps -a
+1947 docker stop 431b5b97edb3
+1948 docker rm 431b5b97edb3
+1949 docker images
+1950 docker run mongo-express
+1951 docker rmi mongo-express
+1952 docker ps
+1953 docker ps -a
+1954 docker rm mongo-express
+1955 docker images
+1956 docker rmi mongo-express
+1957 docker rmi 1b23d7976f02
+1958 docker ps
+1959 docker rm e85153ff221f
+1960 docker rmi mongo-express
+1961 docker ps
+1962 docker run -d -p8081:8081 --name mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=qwerty -e ME_CONFIG_MONGODB_URI="mongodb://admin:qwerty@mongo:27017" mongo-express
+1963 docker ps
+1964 docker start mongo-express
+1965 docker ps
+1966 docker ps -a
+1967 docker stop mongo-network
+1968 docker rm mongo-network
+1969 docker run -d -p 8081:8081 --name mongo-express --network mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=qwerty -e ME_CONFIG_MONGODB_URI="mongodb://admin:qwerty@mongo:27017" mongo-express
+1970 docker ps
+1971 docker ps -a
+1972 docker ps
+1973 docker run -d -p 8081:8081 --name mongo-express --network mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=qwerty -e ME_CONFIG_MONGODB_URI="mongodb://admin:qwerty@mongo:27017" mongo-express
+1974 docker network ls
+1975 clear
+1976 docker run -d -p27017:27017 --name mongo --network mongo-network -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=qwerty mongo
+1977 docker network ls
+1978 docker network create mongo-network
+1979 docker network ls
+1980 docker run -d -p27017:27017 --name mongo --network mongo-network -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=qwerty mongo
+1981 docker ps
+1982 docker run -d -p 8081:8081 --name mongo-express --network mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=qwerty -e ME_CONFIG_MONGODB_URI="mongodb://admin:qwerty@mongo:27017" mongo-express
+1983 docker ps
+1984 docker ps -a
+1985 docker logs mongo-express
+1986 docker rm mongo-express
+1987 docker run -d -p 8081:8081 --name mongo-express --network mongo-network -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=qwerty -e ME_CONFIG_MONGODB_URL="mongodb://admin:qwerty@mongo:27017/?authSource=admin" mongo-express
+1988 docker ps
+1989 curl http://localhost:8081
+1990 clear
+1991 docker ps -a
+1992 docker stop mongo
+1993 docker stop mongo-express
+1994 code .
+1995 docker
+1996 docker -v
+1997 docker ps -a
+1998 docker start cbc87ac0ac63
+1999 docker start 4a75c26f2a7f
+2000 sudo lsof -i :27017
+2001 sudo systemctl stop mongod
+2002 sudo lsof -i :27017
+2003 docker start cbc87ac0ac63
+2004 docker start 4a75c26f2a7f
+2005 clear
+2006 cd getUsers
+2007 cd /media/guddu/NewVolume/Deployment_Become_Developer/Docker/docker-testapp
+2008 docker compose -f mongodb.yaml up -d
+2009 docker network ls
+2010 docker compose -f mongodb.yaml down
+2011 docker network ls
+2012 docker network rm mongodb-network
+2013 docker network rm mongo-network
+2014 docker network ls
+2015 docker login
+2016 docker logout
+2017 docker login
+2018 docker images
+2019 docker push pradip123562m/testapp
+2020 clear
+2021 cd ..
+2022 cd docker-testapp
+2023 docker run -it -v /media/guddu/NewVolume/Deployment_Become_Developer/Docker/data:/test/data ubuntu
+2024 docker run -it -v /home/guddu/Documents/data:/test/data ubuntu
+2025 docker ps
+2026 docker stop 7a3709b573ac
+2027 docker ps
+2028 docker ps -a
+2029 docker start db5cfec4d06a
+2030 docker exec -it db5cfec4d06a /bin/bash
+2031 clear
+2032 docker stop db5cfec4d06a
+2033 docker rm db5cfec4d06a
+2034 docker compose -f mongodb.yaml up
+2035 docker compose -f mongodb.yaml down
+2036 docker compose -f mongodb.yaml up
+2037 docker volume ls
+2038 docker volume create MyVolume
+2039 docker volume ls
+2040 docker volume rm MyVolume
+2041 docker volume prune
+2042 clear
+2043 docker network ls
+2044 docker network create myNetwork
+2045 docker network ls
+2046 history
+guddu@g-IdeaPad-Slim-3-14IAH8:/media/guddu/NewVolume/Deployment_Become_Developer/Docker/docker-testapp$ ch
+ch: command not found
+guddu@g-IdeaPad-Slim-3-14IAH8:/media/guddu/NewVolume/Deployment_Become_Developer/Docker/docker-testapp$
