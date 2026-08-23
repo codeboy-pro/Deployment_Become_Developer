@@ -13,35 +13,3 @@
 1:59:45 Docker Networks  
 
 
-
-
-by gemini :- 
-**Module 1: Foundations & Architecture**
-
-* **Introduction to Docker:** Core concepts, containerization principles, and ecosystem overview
-* **Docker vs. Virtual Machines:** Architectural differences, resource utilization, and performance comparison
-* **Docker Installation:** System prerequisites and environment setup across operating systems
-
-**Module 2: Essential CLI & Container Operations**
-
-* **Docker Commands:** Managing container lifecycles (`run`, `start`, `stop`, `ps`, `exec`, `rm`)
-* **Port Binding:** Mapping host ports to container ports for service accessibility
-* **Troubleshooting & Debugging:** Inspecting containers, reading container logs, and interactive shell debugging
-
-**Module 3: Images & Application Containerization**
-
-* **Docker Image Layers:** Understanding union file systems, caching mechanisms, and layer optimization
-* **Dockerizing Applications:** Writing clean `Dockerfile`s, defining entry points, and handling dependencies
-* **Multi-Stage Builds:** Minimizing production image size and separating build environments *(Added)*
-* **Publishing Images:** Tagging, versioning, and pushing images to Docker Hub and private registries
-
-**Module 4: Storage & Networking**
-
-* **Docker Volumes:** Data persistence strategies, bind mounts, and volume management
-* **Docker Networks:** Network drivers (`bridge`, `host`, `overlay`, `none`) and service discovery between containers
-
-**Module 5: Multi-Container Workflows & Best Practices**
-
-* **Developing with Docker:** Local development workflows, hot-reloading, and environment variables
-* **Docker Compose:** Defining multi-container services, networks, and storage configurations using YAML
-* **Container Security & Optimization:** Non-root users, `.dockerignore` usage, and vulnerability scanning *(Added)*
